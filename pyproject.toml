@@ -24,6 +24,9 @@ dev = [
     "pytest-cov>=5.0",
     "ruff>=0.4",
 ]
+llm = [
+    "anthropic>=0.34",
+]
 
 [tool.ruff]
 line-length = 100

@@ -51,6 +51,27 @@ def _call_names(node: ast.AST) -> list[str]:
     return list(dict.fromkeys(names))  # deduplicate, preserve order
 
 
+def extract_all_calls(func_node: ast.AST) -> list[str]:
+    """All bare function/method names called in func_node (for call graph)."""
+    names: list[str] = []
+    for child in ast.walk(func_node):
+        if isinstance(child, ast.Call):
+            func = child.func
+            if isinstance(func, ast.Name):
+                names.append(func.id)
+            elif isinstance(func, ast.Attribute):
+                names.append(func.attr)
+    return list(dict.fromkeys(names))
+
+
+def _type_coverage(fn: dict) -> float:
+    """Fraction of params + return slot that carry type annotations (0.0–1.0)."""
+    params = fn.get("params", [])
+    total = len(params) + 1  # +1 for return type slot
+    typed = sum(1 for p in params if p.get("type_hint")) + (1 if fn.get("return_type") else 0)
+    return round(typed / total, 3) if total else 0.0
+
+
 def extract_dependencies(func_node: ast.AST, imported_names: list[str]) -> list[str]:
     """Calls made inside func_node that match something imported at module level."""
     calls = _call_names(func_node)
@@ -132,6 +153,10 @@ def enrich_file(parsed: dict, source: str, test_index: dict[str, list[str]]) -> 
             "has_test": name in test_index,
             "test_files": test_index.get(name, []),
         }
+        fn["type_annotation_coverage"] = _type_coverage(fn)
+        fn["_raw_callees"] = extract_all_calls(ast_node) if ast_node else []
+        fn["callees"] = []   # filled later by call graph pass
+        fn["callers"] = []   # filled later by call graph pass
         fn.pop("_loc", None)
         fn.pop("_docstring_lines", None)
         return fn

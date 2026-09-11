@@ -6,6 +6,7 @@ import pytest
 from code_metadata.analyzer import (
     build_test_index,
     enrich_file,
+    extract_all_calls,
     extract_dependencies,
     file_raw_metrics,
 )
@@ -127,6 +128,81 @@ def test_class_methods_get_complexity(enriched):
     init = next(m for m in cls["methods"] if m["name"] == "__init__")
     assert "complexity" in init
     assert init["complexity"]["cyclomatic_complexity"] >= 1
+
+
+# ── type annotation coverage ──────────────────────────────────────────────────
+
+def test_type_annotation_coverage_present(enriched):
+    fn = next(f for f in enriched["functions"] if f["name"] == "simple_function")
+    assert "type_annotation_coverage" in fn
+
+
+def test_fully_typed_function_coverage():
+    import ast as _ast
+    src = "def fn(x: int, y: str) -> bool:\n    return True\n"
+    tree = _ast.parse(src)
+    parsed = {"functions": [], "classes": [], "imports": []}
+    from code_metadata.parser import parse_file
+    import tempfile, os
+    with tempfile.NamedTemporaryFile(suffix=".py", mode="w", delete=False) as f:
+        f.write(src)
+        path = f.name
+    try:
+        from code_metadata.parser import parse_file as pf
+        p = pf(path)
+        enrich_file(p, src, {})
+        fn = p["functions"][0]
+        assert fn["type_annotation_coverage"] == 1.0
+    finally:
+        os.unlink(path)
+
+
+def test_untyped_function_coverage_zero():
+    import tempfile, os
+    src = "def fn(x, y):\n    return x + y\n"
+    with tempfile.NamedTemporaryFile(suffix=".py", mode="w", delete=False) as f:
+        f.write(src)
+        path = f.name
+    try:
+        from code_metadata.parser import parse_file as pf
+        p = pf(path)
+        enrich_file(p, src, {})
+        fn = p["functions"][0]
+        assert fn["type_annotation_coverage"] == 0.0
+    finally:
+        os.unlink(path)
+
+
+# ── call graph ────────────────────────────────────────────────────────────────
+
+def test_callees_field_present(enriched):
+    fn = next(f for f in enriched["functions"] if f["name"] == "simple_function")
+    assert "callees" in fn
+    assert isinstance(fn["callees"], list)
+
+
+def test_callers_field_present(enriched):
+    fn = next(f for f in enriched["functions"] if f["name"] == "simple_function")
+    assert "callers" in fn
+    assert isinstance(fn["callers"], list)
+
+
+def test_extract_all_calls_finds_bare_names():
+    import ast as _ast
+    src = "def fn():\n    helper()\n    obj.method()\n"
+    tree = _ast.parse(src)
+    fn_node = next(n for n in _ast.walk(tree) if isinstance(n, _ast.FunctionDef))
+    calls = extract_all_calls(fn_node)
+    assert "helper" in calls
+    assert "method" in calls
+
+
+def test_extract_all_calls_empty_body():
+    import ast as _ast
+    src = "def fn():\n    pass\n"
+    tree = _ast.parse(src)
+    fn_node = next(n for n in _ast.walk(tree) if isinstance(n, _ast.FunctionDef))
+    assert extract_all_calls(fn_node) == []
 
 
 # ── error resilience ──────────────────────────────────────────────────────────

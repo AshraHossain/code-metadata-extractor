@@ -52,6 +52,10 @@ class FunctionMetadata(BaseModel):
     complexity: ComplexityMetrics
     docstring_quality: DocstringQuality
     git_metadata: Optional[GitMetadata] = None
+    type_annotation_coverage: float = Field(default=0.0, ge=0.0, le=1.0)
+    callees: list[str] = []
+    callers: list[str] = []
+    summary: Optional[str] = None
 
 
 class ClassMetadata(BaseModel):

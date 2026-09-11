@@ -121,3 +121,37 @@ def test_cli_bad_path():
 def test_cli_bad_format():
     result = runner.invoke(app, [str(FIXTURE_DIR), "--format", "xml", "--no-git"])
     assert result.exit_code == 1
+
+
+# ── new fields (type coverage, call graph, summary) ───────────────────────────
+
+def test_type_annotation_coverage_in_all_functions(repo):
+    for file in repo.files:
+        for fn in file.functions:
+            assert 0.0 <= fn.type_annotation_coverage <= 1.0
+        for cls in file.classes:
+            for m in cls.methods:
+                assert 0.0 <= m.type_annotation_coverage <= 1.0
+
+
+def test_callees_and_callers_are_lists(repo):
+    for file in repo.files:
+        for fn in file.functions:
+            assert isinstance(fn.callees, list)
+            assert isinstance(fn.callers, list)
+
+
+def test_summary_field_is_none_by_default(repo):
+    for file in repo.files:
+        for fn in file.functions:
+            assert fn.summary is None
+
+
+def test_csv_has_new_columns(tmp_path):
+    out = tmp_path / "out.csv"
+    runner.invoke(app, [str(FIXTURE_DIR), "--format", "csv", "--output", str(out), "--no-git"])
+    header = out.read_text().splitlines()[0]
+    assert "type_annotation_coverage" in header
+    assert "callees" in header
+    assert "callers" in header
+    assert "summary" in header
