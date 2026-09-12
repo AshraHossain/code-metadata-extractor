@@ -1,0 +1,158 @@
+{
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/.claude/settings.local.json": {
+    "mtime": 1789093629.7596066,
+    "seen": 1789177200.7026591,
+    "ast_hash": "c7c7fcddaaf9d83822ca8dfe866d1c48",
+    "semantic_hash": "c7c7fcddaaf9d83822ca8dfe866d1c48"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/pyproject.toml": {
+    "mtime": 1789171773.20365,
+    "seen": 1789177200.702662,
+    "ast_hash": "84521da91c39aac2af58896b0653e0a8",
+    "semantic_hash": "84521da91c39aac2af58896b0653e0a8"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/__init__.py": {
+    "mtime": 1789060947.9121234,
+    "seen": 1789177200.702663,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/analyzer.py": {
+    "mtime": 1789160687.2696197,
+    "seen": 1789177200.702664,
+    "ast_hash": "cd2a8f6d7f57dd280392435a282bf71b",
+    "semantic_hash": "cd2a8f6d7f57dd280392435a282bf71b"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/cli.py": {
+    "mtime": 1789160731.1654317,
+    "seen": 1789177200.702664,
+    "ast_hash": "71847cb86367c4e5b9ccaa488881bc87",
+    "semantic_hash": "71847cb86367c4e5b9ccaa488881bc87"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/docstring_scorer.py": {
+    "mtime": 1789081019.7155828,
+    "seen": 1789177200.7026649,
+    "ast_hash": "3708961c0306e5e56ee0fbfa30314856",
+    "semantic_hash": "3708961c0306e5e56ee0fbfa30314856"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/exporters.py": {
+    "mtime": 1789160741.2957618,
+    "seen": 1789177200.7026649,
+    "ast_hash": "39da6035e6beaf9ddeb7fbb32d29b5d7",
+    "semantic_hash": "39da6035e6beaf9ddeb7fbb32d29b5d7"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/git_utils.py": {
+    "mtime": 1789080144.0663002,
+    "seen": 1789177200.7026649,
+    "ast_hash": "9378f9d2b4e3792103bcd30ca9c0c474",
+    "semantic_hash": "9378f9d2b4e3792103bcd30ca9c0c474"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/parser.py": {
+    "mtime": 1789061059.1089456,
+    "seen": 1789177200.702666,
+    "ast_hash": "d6ad96d6d8b7f97017dad785c5a01e2e",
+    "semantic_hash": "d6ad96d6d8b7f97017dad785c5a01e2e"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/schema.py": {
+    "mtime": 1789160668.5296557,
+    "seen": 1789177200.702666,
+    "ast_hash": "226d916dd873d2eaf9323351dc97710b",
+    "semantic_hash": "226d916dd873d2eaf9323351dc97710b"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/src/code_metadata/summarizer.py": {
+    "mtime": 1789160697.3310168,
+    "seen": 1789177200.702666,
+    "ast_hash": "2da78ab1c9e1fd7d143531f325b21cad",
+    "semantic_hash": "2da78ab1c9e1fd7d143531f325b21cad"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/__init__.py": {
+    "mtime": 1789060958.6429408,
+    "seen": 1789177200.702667,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/fixtures/__init__.py": {
+    "mtime": 1789060971.4574034,
+    "seen": 1789177200.702667,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/fixtures/sample_module.py": {
+    "mtime": 1789060967.0705554,
+    "seen": 1789177200.702667,
+    "ast_hash": "3113b14722f3d48c46691078628b673f",
+    "semantic_hash": "3113b14722f3d48c46691078628b673f"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/fixtures/test_sample_module.py": {
+    "mtime": 1789060969.2538695,
+    "seen": 1789177200.702668,
+    "ast_hash": "0381108ad85a9125654e4a89f75a4af4",
+    "semantic_hash": "0381108ad85a9125654e4a89f75a4af4"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_analyzer.py": {
+    "mtime": 1789160786.9369788,
+    "seen": 1789177200.702668,
+    "ast_hash": "63dea06936445cdd0127a29aa7886ded",
+    "semantic_hash": "63dea06936445cdd0127a29aa7886ded"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_docstring_scorer.py": {
+    "mtime": 1789081043.4402013,
+    "seen": 1789177200.702668,
+    "ast_hash": "8e7dfafa520f837799ef0d7a947c0f9f",
+    "semantic_hash": "8e7dfafa520f837799ef0d7a947c0f9f"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_exporters.py": {
+    "mtime": 1789081565.667378,
+    "seen": 1789177200.702668,
+    "ast_hash": "fd1cd0dfe2e84c2c78aff132cc9be327",
+    "semantic_hash": "fd1cd0dfe2e84c2c78aff132cc9be327"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_git_utils.py": {
+    "mtime": 1789080164.3037736,
+    "seen": 1789177200.7026691,
+    "ast_hash": "c3f2bef64d663b0b15c5fcfd394aad1c",
+    "semantic_hash": "c3f2bef64d663b0b15c5fcfd394aad1c"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_integration.py": {
+    "mtime": 1789160896.5873833,
+    "seen": 1789177200.7026691,
+    "ast_hash": "bda820ecb09ed168eba3cbfda523cf42",
+    "semantic_hash": "bda820ecb09ed168eba3cbfda523cf42"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_parser.py": {
+    "mtime": 1789061074.5220895,
+    "seen": 1789177200.7026691,
+    "ast_hash": "5bffa5488be411e6673b7fff10e876ce",
+    "semantic_hash": "5bffa5488be411e6673b7fff10e876ce"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/tests/test_summarizer.py": {
+    "mtime": 1789160928.6105492,
+    "seen": 1789177200.70267,
+    "ast_hash": "eb37af353cec79cc6fac47ba950ab8dd",
+    "semantic_hash": "eb37af353cec79cc6fac47ba950ab8dd"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/.github/workflows/ci.yml": {
+    "mtime": 1789171780.6622064,
+    "seen": 1789177200.70267,
+    "ast_hash": "2a7a274dbb8fa75e15c799245c86396d",
+    "semantic_hash": "2a7a274dbb8fa75e15c799245c86396d"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/.serena/project.yml": {
+    "mtime": 1789093632.7902412,
+    "seen": 1789177200.70267,
+    "ast_hash": "fead6316842ef1d3d4cb14705ab68ad4",
+    "semantic_hash": "fead6316842ef1d3d4cb14705ab68ad4"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/CLAUDE.md": {
+    "mtime": 1789093717.8060288,
+    "seen": 1789177200.702671,
+    "ast_hash": "14e9ba05954187aa25e5e9080a6e4271",
+    "semantic_hash": "14e9ba05954187aa25e5e9080a6e4271"
+  },
+  "/Users/ashraf-macbookair/Repos/Projects/AI-Engineering/code-metadata-extractor/README.md": {
+    "mtime": 1789082752.8521502,
+    "seen": 1789177200.702671,
+    "ast_hash": "226fc908b457df77efd5e86b3a70169f",
+    "semantic_hash": "226fc908b457df77efd5e86b3a70169f"
+  }
+}

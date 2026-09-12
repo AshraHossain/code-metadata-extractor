@@ -1,0 +1,22 @@
+{
+  "0": "cli.py",
+  "1": "Test Analyzer",
+  "2": "Test Docstring Scorer",
+  "3": "parse_file (AST walker entry point)",
+  "4": "Test Git Utils",
+  "5": "sample_module.py",
+  "6": "extract_repo (repo-level orchestration)",
+  "7": "Test Parser",
+  "8": "Test Integration",
+  "9": "README",
+  "10": "AST-based extraction (no LLM in MVP)",
+  "11": "Docstring style detection heuristic (no LLM)",
+  "12": "gitpython (git blame)",
+  "13": "pydantic v2 (schema/validation)",
+  "14": "radon (cyclomatic complexity + LOC)",
+  "15": "code-metadata",
+  "16": "code_metadata/__init__.py",
+  "17": "Parser Module (AST walker)",
+  "18": "fixtures/__init__.py",
+  "19": "tests/__init__.py"
+}
